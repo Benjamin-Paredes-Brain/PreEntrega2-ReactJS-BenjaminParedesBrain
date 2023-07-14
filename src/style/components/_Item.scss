@@ -1,0 +1,26 @@
+.main_products_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .products_container {
+        margin: 1rem;
+        padding: 2rem;
+        background-color: #3D3A50;
+        border-radius: 10px;
+        max-width: 25%;
+
+        .products_img {
+            max-width: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .products_txt {
+            color: #F7F7F7;
+            text-align: center;
+            margin: 10px;
+        }
+    }
+
+}

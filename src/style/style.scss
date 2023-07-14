@@ -12,6 +12,10 @@
 @import "./components/ItemListContainer/ItemListContainer";
 @import "./components/Navbar/Navbar";
 
+@import "./components/ItemCount";
+@import "./components/Item";
+@import "./components/Spinner";
+
 html {
     background-color: $bg-color;
     margin-left: 20%;

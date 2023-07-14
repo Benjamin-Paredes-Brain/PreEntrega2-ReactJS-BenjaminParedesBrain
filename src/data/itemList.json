@@ -1,0 +1,5 @@
+[
+    {"id": 1, "stock": 2, "title": "OVERSIZE WHITE DEVILMAN", "description": "...", "price": 100, "pictureURL": "/tshirtblancadevilman.png"},
+    {"id": 2, "stock": 5, "title": "OVERSIZE BROWN BUTTERFLIES", "description": "...", "price": 100, "pictureURL": "/tshirtbutterflies.png"},
+    {"id": 3, "stock": 0, "title": "OVERSIZE BLACK DEMON", "description": "...", "price": 100, "pictureURL": "/tshirtdmon.png"}
+]

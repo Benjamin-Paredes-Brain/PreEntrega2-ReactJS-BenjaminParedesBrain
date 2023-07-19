@@ -1,0 +1,65 @@
+.detail_container {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    margin: 3rem 2rem;
+    height: 100vh;
+
+    .detail_img {
+        max-width: 100%;
+        display: block;
+    }
+
+    .detail_info_container {
+        border-bottom: 1px solid black;
+        margin-left: 2rem;
+
+        .detail_title {
+            color: $text-color;
+            text-align: center;
+            margin: 10px;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            text-align: left;
+        }
+
+
+        .detail_price {
+            color: $text-color;
+            text-align: center;
+            margin: 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 2rem;
+            text-align: left;
+        }
+
+        .detail_title_size {
+            color: $text-color;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1rem;
+            margin: 0.5rem 0 0;
+        }
+
+        .detail_size {
+            cursor: pointer;
+            padding: 0.6rem;
+            margin: 1rem 0.2rem;
+            border-radius: 0.3rem;
+            border: 1px solid  $text-color;
+            background-color: $bg-color;
+            color: $text-color;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+
+        .selected_size{
+            color: $primary-color;
+        }
+    }
+
+
+}

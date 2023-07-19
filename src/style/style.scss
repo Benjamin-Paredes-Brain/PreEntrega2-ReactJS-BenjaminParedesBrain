@@ -8,17 +8,32 @@
 @import "./components/vars/vars";
 
 // COMPONENTES
-@import "./components/CartWidget/CartWidget";
-@import "./components/ItemListContainer/ItemListContainer";
-@import "./components/Navbar/Navbar";
+@import "./components/Header/CartWidget";
+@import "./components/Header/Navbar";
 
-@import "./components/ItemCount";
-@import "./components/Item";
-@import "./components/Spinner";
+@import "./components/Item/ItemCount";
+@import "./components/Item/Spinner";
+@import "./components/Item/ItemListContainer";
+@import "./components/Item/ItemDetailContainer";
+@import "./components/Item/ItemFilters";
+
+@import "./components/Homee/Home";
+
+@import "./components/NotFound/NotFound";
+
+@import "./components/Contact/Contact";
 
 html {
     background-color: $bg-color;
     margin-left: 20%;
     margin-right: 20%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.page_title {
+    margin: 1rem;
+    color: $text-color;
+    text-transform: uppercase;
+    font-weight: bold;
+
 }

@@ -1,0 +1,32 @@
+.error_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    margin: 2rem;
+
+    .error_txt {
+        color: rgb(165, 3, 3);
+        font-weight: bold;
+    }
+
+    .error_button {
+        display: block;
+        margin: 1rem auto;
+        padding: 0.5rem 10rem;
+        font-size: 1rem;
+        background-color: $bg-color;
+        text-transform: uppercase;
+        border: 0.2rem solid rgb(165, 3, 3);;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        font-weight: bolder;
+
+        .error_link {
+            text-decoration: none;
+            color: $text-color;
+        }
+    }
+
+}

@@ -1,0 +1,55 @@
+.quantity_selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    margin: 1rem auto;
+    background-color: $primary-color;
+    color: $bg-color;
+    padding: 0.5rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bolder;
+
+    .count_button {
+
+        border-radius: 20%;
+        border: 1px solid transparent;
+
+        background-color: transparent;
+        font-weight: bold;
+        font-size: 1rem;
+
+        cursor: pointer;
+    }
+}
+
+.out_of_stock {
+    margin: 10px auto;
+    background-color: $primary-color;
+    color: $bg-color;
+    padding: 0.5rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.cartadd_button {
+    display: block;
+    margin: 1rem auto;
+    background-color: $primary-color;
+    color: $bg-color;
+    padding: 0.5rem 10rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: bolder;
+}

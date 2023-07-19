@@ -12,7 +12,7 @@ export const ItemCount = ({ stock, initial}) => {
     }
 
     const onAdd = () => {
-        stock > 0 ? alert(`Haz agregado ${count} items al carrito!`) : alert("No hay stock de este producto!")
+        stock > 0 ? alert(`You have added ${count} items to cart!`) : alert("There is no stock of this product!")
 
     }
 

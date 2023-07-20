@@ -7,6 +7,7 @@ import { ItemDetailContainer } from "./components/Item/ItemDetailContainer"
 import { ItemFilters } from "./components/Item/ItemFilters"
 import { NotFound } from "./components/NotFound/NotFound"
 import { Contact } from "./components/Contact/Contact"
+import { Footer } from "./components/Footer/Footer"
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
 
+        <Footer />
 
       </BrowserRouter>
 

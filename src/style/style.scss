@@ -4,24 +4,19 @@
     box-sizing: border-box;
 }
 
-// VARIABLES
 @import "./components/vars/vars";
 
-// COMPONENTES
 @import "./components/Header/CartWidget";
 @import "./components/Header/Navbar";
-
 @import "./components/Item/ItemCount";
 @import "./components/Item/Spinner";
 @import "./components/Item/ItemListContainer";
 @import "./components/Item/ItemDetailContainer";
 @import "./components/Item/ItemFilters";
-
 @import "./components/Homee/Home";
-
 @import "./components/NotFound/NotFound";
-
 @import "./components/Contact/Contact";
+@import "./components/Footer/Footer";
 
 html {
     background-color: $bg-color;

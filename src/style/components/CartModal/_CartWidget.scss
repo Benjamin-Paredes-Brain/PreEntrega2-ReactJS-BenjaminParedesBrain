@@ -1,0 +1,20 @@
+.cart_icon_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+
+    .cart {
+        font-size: 25px;
+        color: $text-color;
+    }
+
+    .cart_counter {
+        background-color: $text-color;
+        color: $secondary-color;
+        font-size: 10px;
+        font-weight: bolder;
+        padding: 2px 5px;
+        border-radius: 50%;
+    }
+}

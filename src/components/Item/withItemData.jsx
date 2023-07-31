@@ -1,16 +1,28 @@
 import { useEffect, useState } from "react";
-import { fetchResolve } from "../../helpers/fetchResolve";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../Firebase/config";
 
 const withItemData = (Component) => {
   const WithItemData = (props) => {
     const [loading, setLoading] = useState(true);
     const [itemData, setItemData] = useState([]);
-
+    
     useEffect(() => {
-      fetchResolve()
-        .then((data) => setItemData(data))
-        .finally(() => setLoading(false));
-    }, []);
+      const data = collection(db, "PRODUCTOS")
+      getDocs(data)
+      .then((r) => {
+        const docs = r.docs.map((doc) => {
+          return {
+            id: doc.id,
+            ...doc.data()
+          }
+        })
+        setItemData(docs)
+      })
+      .catch (e => console.log(e))
+      .finally(() => setLoading(false))
+
+    }, [])
 
     return <Component {...props} loading={loading} itemData={itemData} />;
   };
@@ -19,3 +31,4 @@ const withItemData = (Component) => {
 };
 
 export default withItemData;
+

@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export const ItemCount = ({ stock, initial}) => {
+export const ItemCount = ({ stock, initial, add}) => {
     const [count, setCount] = useState(stock > 0 ? initial = 1 : initial = 0)
 
     const handleIncrement = () => {
@@ -9,11 +9,6 @@ export const ItemCount = ({ stock, initial}) => {
 
     const handleDecline = () => {
         setCount(count === initial ? count : count - 1)
-    }
-
-    const onAdd = () => {
-        stock > 0 ? alert(`You have added ${count} items to cart!`) : alert("There is no stock of this product!")
-
     }
 
     return (
@@ -33,7 +28,7 @@ export const ItemCount = ({ stock, initial}) => {
             }
 
 
-            <button className="cartadd_button" onClick={onAdd}>ADD TO CART</button>
+            <button className="cartadd_button" onClick={add}>ADD TO CART</button>
 
 
 

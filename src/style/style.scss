@@ -6,7 +6,7 @@
 
 @import "./components/vars/vars";
 
-@import "./components/Header/CartWidget";
+@import "./components/CartModal/CartWidget";
 @import "./components/Header/Navbar";
 @import "./components/Item/ItemCount";
 @import "./components/Item/Spinner";
@@ -17,6 +17,7 @@
 @import "./components/NotFound/NotFound";
 @import "./components/Contact/Contact";
 @import "./components/Footer/Footer";
+@import "./components/CartModal/CartModal";
 
 html {
     background-color: $bg-color;

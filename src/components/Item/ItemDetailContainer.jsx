@@ -3,11 +3,25 @@ import { ItemCount } from "../Item/ItemCount";
 import { ItemSize } from "./ItemSize";
 import { NotFound } from "../NotFound/NotFound";
 import { Spinner } from "./Spinner";
+import { CartContext } from "../../context/CartContext";
+import { useContext, useState } from "react";
 import withItemData from "./withItemData";
+
 
 export const ItemDetailContainer = withItemData(({ loading, itemData }) => {
     const { itemid } = useParams();
-    const item = itemData.find((prod) => prod.id === Number(itemid));
+    const item = itemData.find((prod) => prod.id === itemid);
+
+    const {addtoCart} = useContext(CartContext)
+    const [quantity, Setquantity] = useState(1)
+
+    const handleAddCart = () => {
+        const newItem = {
+            ...item,
+            quantity
+        }
+        addtoCart(newItem)
+    }
 
     if (loading) {
         return <Spinner />;
@@ -26,7 +40,7 @@ export const ItemDetailContainer = withItemData(({ loading, itemData }) => {
                     <p className="detail_price">${item.price}</p>
                     <hr />
                     <ItemSize />
-                    <ItemCount stock={item.stock} />
+                    <ItemCount stock={item.stock} add={handleAddCart}/>
                 </div>
             </div>
         </div>

@@ -14,9 +14,10 @@ export const ItemListContainer = withItemData(({ loading, itemData }) => {
                 </div>
 
                 <div className="main_items_container">
-                    {loading ? (
+                    {loading
+                        ?
                         <Spinner />
-                    ) : (
+                        :
                         itemData.map((item) => (
                             <div className="items_container" key={item.id}>
                                 <Link to={`/detail/${item.id}`}>
@@ -26,7 +27,7 @@ export const ItemListContainer = withItemData(({ loading, itemData }) => {
                                 <p className="items_txt">${item.price}</p>
                             </div>
                         ))
-                    )}
+                    }
                 </div>
             </div>
         </div>

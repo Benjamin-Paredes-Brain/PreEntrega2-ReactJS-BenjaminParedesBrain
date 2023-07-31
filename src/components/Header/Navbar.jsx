@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
-import { CartWidget } from "./CartWidget"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { CartModal } from "../CartModal/CartModal"
 
 export const Navbar = () => {
 
@@ -21,7 +21,17 @@ export const Navbar = () => {
 
                 <div className="header_logo_container" > <Link to={"/"}><img src="/logo-vurdertrend.png" alt="vurdertrend-logo" className="header_logo" /></Link></div>
 
-                <CartWidget />
+                <div className="right_header_container">
+                    <div className="account_container">
+                        <a href="#" className="account_link">Create account</a>
+                        <span className="account_link">|</span>
+                        <a href="#" className="account_link">login</a>
+                    </div>
+
+                    <CartModal />
+
+                </div>
+
             </div>
 
 

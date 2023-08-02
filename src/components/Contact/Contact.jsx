@@ -20,9 +20,9 @@ export const Contact = () => {
 
     const showAlertMessage = () => {
         Swal.fire({
-            title: 'FORMULARIO ENVIADO',
+            title: 'SUBMITTED FORM',
             icon: 'success',
-            confirmButtonText: 'ACEPTAR',
+            confirmButtonText: 'ACCEPT',
             allowOutsideClick: false
         }).then((result) => {
             if (result.isConfirmed) {

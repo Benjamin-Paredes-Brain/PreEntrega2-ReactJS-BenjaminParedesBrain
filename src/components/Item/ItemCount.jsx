@@ -1,14 +1,12 @@
-import { useState } from "react"
 
-export const ItemCount = ({ stock, initial, add}) => {
-    const [count, setCount] = useState(stock > 0 ? initial = 1 : initial = 0)
+export const ItemCount = ({ stock, add, quantity, setQuantity }) => {
 
     const handleIncrement = () => {
-        count < stock && setCount(count + 1);
+        quantity < stock && setQuantity(quantity + 1);
     }
 
     const handleDecline = () => {
-        setCount(count === initial ? count : count - 1)
+        quantity > 1 && setQuantity(quantity - 1)
     }
 
     return (
@@ -17,18 +15,19 @@ export const ItemCount = ({ stock, initial, add}) => {
 
                 <div className="quantity_selector">
                     <button className="count_button" onClick={handleDecline}>-</button>
-                    <div>{count}</div>
+                    <div>{quantity}</div>
                     <button className="count_button" onClick={handleIncrement}>+</button>
 
                 </div>
 
                 :
+
                 <div className="out_of_stock">OUT OF STOCK</div>
 
             }
 
 
-            <button className="cartadd_button" onClick={add}>ADD TO CART</button>
+            <button className={stock > 0 ? "cartadd_button" : "disable"} onClick={add} disabled={stock <= 0}>ADD TO CART</button>
 
 
 

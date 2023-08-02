@@ -12,13 +12,15 @@ export const ItemDetailContainer = withItemData(({ loading, itemData }) => {
     const { itemid } = useParams();
     const item = itemData.find((prod) => prod.id === itemid);
 
-    const {addtoCart} = useContext(CartContext)
-    const [quantity, Setquantity] = useState(1)
+    const { addtoCart } = useContext(CartContext)
+    const [quantity, setQuantity] = useState(1)
+    const [selectedSize, setSelectedSize] = useState(null);
 
     const handleAddCart = () => {
         const newItem = {
             ...item,
-            quantity
+            quantity,
+            selectedSize
         }
         addtoCart(newItem)
     }
@@ -39,8 +41,8 @@ export const ItemDetailContainer = withItemData(({ loading, itemData }) => {
                     <p className="detail_title">{item.title}</p>
                     <p className="detail_price">${item.price}</p>
                     <hr />
-                    <ItemSize />
-                    <ItemCount stock={item.stock} add={handleAddCart}/>
+                    <ItemSize selectedSize={selectedSize} setSelectedSize={setSelectedSize} />
+                    <ItemCount stock={item.stock} add={handleAddCart} quantity={quantity} setQuantity={setQuantity} />
                 </div>
             </div>
         </div>

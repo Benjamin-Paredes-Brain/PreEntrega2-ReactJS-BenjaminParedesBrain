@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../Firebase/config";
+import { db } from "../../Firebase/config.js";
 
 const withItemData = (Component) => {
   const WithItemData = (props) => {

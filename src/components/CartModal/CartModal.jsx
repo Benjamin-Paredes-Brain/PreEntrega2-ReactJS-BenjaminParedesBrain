@@ -18,6 +18,9 @@ export const CartModal = () => {
         setShowCart(false);
     }
 
+    const subtotal = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+
+
     return (
         <div>
 
@@ -35,20 +38,31 @@ export const CartModal = () => {
                             <Link className="empty_cart_button" onClick={handleMenuCartClose} to={"/items"}>GO SHOPPING</Link>
                         </div>
                         :
-                        cart.map((item) => (
-                            <div className="modal_items_container" key={item.id}>
-                                <img className="modal_img" src={item.pictureURL} alt={item.title} />
-                                <div className="modal_item">
-                                    <div className="modal_item_info">
-                                        <strong><p className="modal_itemTitle">{item.title}</p></strong>
-                                        <p>Size: {item.selectedSize}</p>
-                                        <p>Quantity: {item.quantity}</p>
-                                        <p>Price:  ${item.price * item.quantity}</p>
+                        <div className="modal_display_container">  {
+
+                            cart.map((item) => (
+                                <div className="modal_items_container" key={item.id}>
+                                    <img className="modal_img" src={item.pictureURL} alt={item.title} />
+                                    <div className="modal_item">
+                                        <div className="modal_item_info">
+                                            <strong><p className="modal_itemTitle">{item.title}</p></strong>
+                                            <p>Size: {item.selectedSize}</p>
+                                            <p>Quantity: {item.quantity}</p>
+                                            <p>Price:  ${item.price * item.quantity}</p>
+                                        </div>
+                                        <button onClick={() => removetoCart(item.id)} className="modal_delete_button"><FontAwesomeIcon icon={faTrashCan} /></button>
                                     </div>
-                                    <button onClick={() => removetoCart(item.id)} className="modal_delete_button"><FontAwesomeIcon icon={faTrashCan} /></button>
                                 </div>
+                            ))
+
+                        }
+                            <div className="modal_checkout">
+                                <hr />
+                                <p className="modal_subtotal">Subtotal: ${subtotal} </p>
+                                <Link className="modal_checkout_button" onClick={handleMenuCartClose} to={"/checkout"}>Checkout</Link>
                             </div>
-                        ))
+
+                        </div>
                 }
             </div>
 

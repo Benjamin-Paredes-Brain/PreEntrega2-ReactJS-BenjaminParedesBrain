@@ -9,29 +9,31 @@ import { NotFound } from "./components/NotFound/NotFound"
 import { Contact } from "./components/Contact/Contact"
 import { Footer } from "./components/Footer/Footer"
 import { CartContextProvider } from "./context/CartContext"
+import {Checkout} from "./components/Checkout/Checkout"
 
 function App() {
 
   return (
-      <CartContextProvider>
-        
-        <BrowserRouter>
-          <Navbar />
+    <CartContextProvider>
 
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/items" element={<ItemListContainer />} />
-            <Route path="/detail/:itemid" element={<ItemDetailContainer />} />
-            <Route path="/category/:itemCategory" element={<ItemFilters />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+      <BrowserRouter>
+        <Navbar />
 
-          <Footer />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/items" element={<ItemListContainer />} />
+          <Route path="/detail/:itemid" element={<ItemDetailContainer />} />
+          <Route path="/category/:itemCategory" element={<ItemFilters />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
 
-        </BrowserRouter>
+        <Footer />
 
-      </CartContextProvider>
+      </BrowserRouter>
+
+    </CartContextProvider>
   )
 }
 

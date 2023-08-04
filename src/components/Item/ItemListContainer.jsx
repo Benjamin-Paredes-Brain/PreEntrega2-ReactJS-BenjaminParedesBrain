@@ -19,13 +19,13 @@ export const ItemListContainer = withItemData(({ loading, itemData }) => {
                         <Spinner />
                         :
                         itemData.map((item) => (
-                            <div className="items_container" key={item.id}>
-                                <Link to={`/detail/${item.id}`}>
+                            <Link key={item.id} className="items_container" to={`/detail/${item.id}`}>
+                                <div>
                                     <img className="items_img" src={item.pictureURL} alt={item.title} />
-                                </Link>
-                                <p className="items_txt">{item.title}</p>
-                                <p className="items_txt">${item.price}</p>
-                            </div>
+                                    <p className="items_txt">{item.title}</p>
+                                    <p className="items_txt">${item.price}</p>
+                                </div>
+                            </Link>
                         ))
                     }
                 </div>

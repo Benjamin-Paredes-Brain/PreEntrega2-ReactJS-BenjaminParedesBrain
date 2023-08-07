@@ -12,18 +12,24 @@ export const ItemDetailContainer = withItemData(({ loading, itemData }) => {
     const { itemid } = useParams();
     const item = itemData.find((prod) => prod.id === itemid);
 
-    const { addtoCart } = useContext(CartContext)
-    const [quantity, setQuantity] = useState(1)
+    const { addtoCart, totalQuantity, isInCart, handleMenuCartOpen} = useContext(CartContext);
+    const [quantity, setQuantity] = useState(1);
     const [selectedSize, setSelectedSize] = useState(null);
 
     const handleAddCart = () => {
+        if (!selectedSize) {
+            alert("Por favor, selecciona un talle antes de agregar el ítem al carrito.");
+            return;
+        }
         const newItem = {
             ...item,
             quantity,
-            selectedSize
-        }
-        addtoCart(newItem)
-    }
+            selectedSize,
+        };
+        addtoCart(newItem);
+        setQuantity(1);
+        handleMenuCartOpen()
+    };
 
     if (loading) {
         return <Spinner />;
@@ -32,6 +38,8 @@ export const ItemDetailContainer = withItemData(({ loading, itemData }) => {
     if (!item) {
         return <NotFound />;
     }
+
+    const availableStock = item.stock - (isInCart(item.id) ? totalQuantity(item.id) : 0);
 
     return (
         <div>
@@ -42,9 +50,9 @@ export const ItemDetailContainer = withItemData(({ loading, itemData }) => {
                     <p className="detail_price">${item.price}</p>
                     <hr />
                     <ItemSize selectedSize={selectedSize} setSelectedSize={setSelectedSize} />
-                    <ItemCount stock={item.stock} add={handleAddCart} quantity={quantity} setQuantity={setQuantity} />
+                    <ItemCount stock={availableStock} add={handleAddCart} quantity={quantity} setQuantity={setQuantity} />
                 </div>
             </div>
         </div>
-    )
-})
+    );
+});

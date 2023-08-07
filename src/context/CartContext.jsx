@@ -5,6 +5,16 @@ const initCart = JSON.parse(localStorage.getItem('cart')) || []
 
 export const CartContextProvider = ({ children }) => {
 const [cart, setCart] = useState(initCart);
+const [showCart, setShowCart] = useState(false);
+
+const handleMenuCartOpen = () => {
+    setShowCart(true);
+    document.body.style.overflow = "hidden";
+}
+
+const handleMenuCartClose = () => {
+    setShowCart(false);
+}
 
 
     const addtoCart = (itemToAdd) => {
@@ -29,13 +39,17 @@ const [cart, setCart] = useState(initCart);
         return cart.reduce((acc, item) => acc + item.quantity, 0)
     }
 
+    const isInCart = (id) => {
+        return cart.some((item) => item.id === id)
+      }
+
     useEffect(() => {
         localStorage.setItem('cart', JSON.stringify(cart))
     }, [cart])
 
 
     return (
-        <CartContext.Provider value={{ cart, addtoCart, removetoCart, totalQuantity }}>
+        <CartContext.Provider value={{ cart, addtoCart, removetoCart, totalQuantity, isInCart, showCart, handleMenuCartOpen, handleMenuCartClose}}>
             {children}
         </CartContext.Provider>
     )

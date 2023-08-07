@@ -6,17 +6,7 @@ import { faTrashCan, faCartArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom"
 
 export const CartModal = () => {
-    const { cart, removetoCart } = useContext(CartContext)
-    const [showCart, setShowCart] = useState(false);
-
-    const handleMenuCartOpen = () => {
-        setShowCart(true);
-        document.body.style.overflow = "hidden";
-    }
-
-    const handleMenuCartClose = () => {
-        setShowCart(false);
-    }
+    const { cart, removetoCart, showCart, handleMenuCartOpen, handleMenuCartClose } = useContext(CartContext)
 
     const subtotal = cart.reduce((total, item) => total + item.price * item.quantity, 0);
 

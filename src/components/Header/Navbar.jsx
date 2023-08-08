@@ -1,23 +1,15 @@
 import { Link } from "react-router-dom"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { CartModal } from "../CartModal/CartModal"
+import { SearchBar } from "./Searchbar"
 
 export const Navbar = () => {
-
-    const preventdefault = (e) => {
-        e.preventDefault();
-    }
 
     return (
         <header className="header">
 
             <div className="header_container">
 
-                <form className="header_search">
-                    <input className="header_search_text" type="text" placeholder="search" />
-                    <button className="header_search_button" onClick={preventdefault}> <FontAwesomeIcon icon={faMagnifyingGlass} /> </button>
-                </form>
+                <SearchBar />
 
                 <div className="header_logo_container" > <Link to={"/"}><img src="/logo-vurdertrend.png" alt="vurdertrend-logo" className="header_logo" /></Link></div>
 

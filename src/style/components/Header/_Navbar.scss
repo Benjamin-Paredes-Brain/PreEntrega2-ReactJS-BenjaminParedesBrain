@@ -6,27 +6,6 @@
         align-items: center;
         padding: 20px 0;
 
-
-        .header_search {
-            max-width: 100%;
-            border-bottom: 1px solid $text-color;
-            background-color: $bg-color;
-
-            .header_search_text {
-                background-color: $bg-color;
-                border: none;
-                padding: 5px 0;
-
-            }
-
-            .header_search_button {
-                background-color: $bg-color;
-                color: $text-color;
-                border: none;
-                font-size: 20px;
-            }
-        }
-
         .header_logo_container {
             display: inline-block;
             text-align: center;

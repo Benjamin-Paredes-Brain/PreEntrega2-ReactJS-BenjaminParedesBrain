@@ -1,0 +1,61 @@
+.searchBar_form {
+    max-width: 100%;
+    border-bottom: 1px solid $text-color;
+    background-color: $bg-color;
+
+    .searchBar_input {
+        background-color: $bg-color;
+        border: none;
+        padding: 0.5rem 0;
+        color: $text-color;
+
+    }
+
+    .searchBar_button {
+        background-color: $bg-color;
+        color: $text-color;
+        border: none;
+        font-size: 20px;
+    }
+}
+
+.searchResults_container {
+    background-color: $secondary-color;
+    list-style: none;
+    text-decoration: none;
+    position: fixed;
+
+    .searchResults_link {
+        text-decoration: none;
+
+        .searchResults_item {
+            margin: 1rem 0.5rem;
+            display: grid;
+            grid-template-columns: 0.5fr 1fr;
+
+            .searchResults_img {
+                max-width: 6rem;
+            }
+
+            .searchResults_info {
+                margin: 1rem;
+                text-align: start;
+                color: $text-color;
+
+                &:hover {
+                    color: $primary-color;
+                } 
+            }
+        }
+    }
+
+    .all_searchResults {
+        text-decoration: none;
+        color: $primary-color;
+        text-decoration: underline;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        
+    }
+}

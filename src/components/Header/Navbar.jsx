@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { CartModal } from "../CartModal/CartModal"
-import { SearchBar } from "./Searchbar"
+import { SearchBar } from "./SearchBar"
 
 export const Navbar = () => {
 

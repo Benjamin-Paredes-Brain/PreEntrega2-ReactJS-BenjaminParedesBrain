@@ -1,7 +1,25 @@
-import { useForm} from '@formspree/react';
-import { useState, useRef  } from 'react';
+import { useForm } from '@formspree/react';
+import { useState, useRef } from 'react';
 import Swal from "sweetalert2";
 import 'sweetalert2/dist/sweetalert2.css';
+import { Formik, Form, Field, ErrorMessage } from "formik"
+import * as Yup from "yup"
+
+const schemaValidation = Yup.object().shape({
+    name: Yup.string()
+        .min(3, "The name is too short")
+        .max(20, "Maximum 20 characters")
+        .required("This field is required"),
+    email: Yup.string()
+        .required("This field is required")
+        .email("The email is invalid"),
+    message: Yup.string()
+        .min(10, "The message is too short")
+        .max(100, "Maximum 100 characters")
+        .required("This field is required"),
+
+})
+
 
 
 export const Contact = () => {
@@ -34,18 +52,39 @@ export const Contact = () => {
     return (
         <div style={{ minHeight: "100vh" }}>
             <h2 className="page_title">CONTACT</h2>
-            <div className="main_contact_container">
-                <form className="form_container" onSubmit={handleFormSubmit}>
-                    <label htmlFor="name" className="label-forms">Name:</label>
-                    <input type="text" id="name" name="name" className="inputs-forms" placeholder="Example: Benjamin Brain" required />
-                    <label htmlFor="email" className="label-forms">Email:</label>
-                    <input type="email" id="email" name="email" className="inputs-forms" placeholder="Example: name@email.com" required />
-                    <label htmlFor="message" className="label-forms">Message:</label>
-                    <textarea id="message" name="message" required className="inputs-forms"></textarea>
-                    <button type="submit" className="button-forms" disabled={state.submitting}>Send</button>
-                </form>
+            <div className="main_form_container">
+
+                <Formik
+                    initialValues={{
+                        name: "",
+                        email: "",
+                        message: ""
+                    }}
+                    onSubmit={handleFormSubmit}
+                    validationSchema={schemaValidation}
+                    validateOnBlur={false}
+                >
+                    {() => (
+                        <Form className="form_container" onSubmit={handleFormSubmit}>
+                            <p className="label_form">NAME:</p>
+                            <Field className="field_form" placeholder="EXAMPLE: Jhon Jhones" type="text" name="name" />
+                            <ErrorMessage className="errorMessage_form" name="name" component="p" />
+                            <p className="label_form">EMAIL:</p>
+                            <Field className="field_form" placeholder="EXAMPLE: name@email.com" type="email" name="email" />
+                            <ErrorMessage className="errorMessage_form" name="email" component="p" />
+                            <p className="label_form">MESSAGE:</p>
+                            <Field className="field_form" type="text" name="message" component="textarea" />
+                            <ErrorMessage className="errorMessage_form" name="message" component="p" />
+
+                            <button className="button_form" type="submit" disabled={state.submitting}>SEND</button>
+                        </Form>
+                    )}
+                </Formik>
+
                 {showAlert && showAlertMessage()}
             </div>
         </div>
     )
 }
+
+

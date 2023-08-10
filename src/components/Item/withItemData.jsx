@@ -24,7 +24,7 @@ const withItemData = (Component) => {
 
     }, [])
 
-    return <Component {...props} loading={loading} itemData={itemData} />;
+    return <Component {...props} loading={loading} itemData={itemData} database={db}/>;
   };
 
   return WithItemData;

@@ -32,7 +32,7 @@ export const Contact = () => {
     };
 
     return (
-        <div>
+        <div style={{ minHeight: "100vh" }}>
             <h2 className="page_title">CONTACT</h2>
             <div className="main_contact_container">
                 <form className="form_container" onSubmit={handleFormSubmit}>

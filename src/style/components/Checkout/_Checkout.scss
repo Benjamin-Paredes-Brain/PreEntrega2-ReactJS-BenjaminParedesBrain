@@ -1,0 +1,80 @@
+.main_form_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5%;
+
+    .form_container {
+        max-width: 500px;
+        width: 100%;
+
+
+        .field_form {
+            padding: 12px;
+            margin: 8px 0;
+            max-width: 100%;
+            width: 100%;
+            border: 2px solid $primary-color;
+            font-size: 16px;
+        }
+
+        .button_form {
+            background-color: $primary-color;
+            color: black;
+            padding: 12px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            max-width: 100%;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .errorMessage_form {
+            color: red;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .label_form {
+            color: $primary-color;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+
+    }
+}
+
+.order_feedback_container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 2rem;
+    color: $text-color;
+    min-height: 100vh;
+
+    .order_feedback_title{
+        text-transform: uppercase;
+        font-weight: bold;
+        margin: 1rem;
+    }
+
+    .order_feedback_number {
+        margin: 1rem;
+    }
+
+    .order_feedback_link{
+        background-color: $primary-color;
+        color: black;
+        padding: 1rem;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 10%;
+        font-weight: bold;
+        text-decoration: none;
+        margin: 1rem auto;
+        text-transform: uppercase;
+    }
+}

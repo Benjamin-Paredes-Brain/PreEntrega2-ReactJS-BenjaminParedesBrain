@@ -35,6 +35,10 @@ const handleMenuCartClose = () => {
         setCart(cart.filter((item) => item.id !== id))
     }
 
+    const emptyCart = () => {
+        setCart([])
+    }
+
     const totalQuantity = () => {
         return cart.reduce((acc, item) => acc + item.quantity, 0)
     }
@@ -49,7 +53,7 @@ const handleMenuCartClose = () => {
 
 
     return (
-        <CartContext.Provider value={{ cart, addtoCart, removetoCart, totalQuantity, isInCart, showCart, handleMenuCartOpen, handleMenuCartClose}}>
+        <CartContext.Provider value={{ cart, addtoCart, removetoCart, totalQuantity, isInCart, emptyCart, showCart,handleMenuCartOpen, handleMenuCartClose}}>
             {children}
         </CartContext.Provider>
     )

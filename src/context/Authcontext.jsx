@@ -2,9 +2,9 @@ import { createContext, useEffect, useState } from "react";
 import { signInWithPopup, onAuthStateChanged, signOut } from "firebase/auth";
 import { auth, provider } from "../Firebase/config.js"
 
-export const AuthContext = createContext()
+export const Authcontext = createContext()
 
-export const AuthContextProvider = ({ children }) => {
+export const AuthcontextProvider = ({ children }) => {
     const [user, setUser] = useState({
         logged: false,
         email: null,
@@ -38,8 +38,8 @@ export const AuthContextProvider = ({ children }) => {
     }, [])
 
     return (
-        <AuthContext.Provider value={{ user, googleLogin, googlesignOut }}>
+        <Authcontext.Provider value={{ user, googleLogin, googlesignOut }}>
             {children}
-        </AuthContext.Provider>
+        </Authcontext.Provider>
     )
 }

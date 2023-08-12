@@ -2,10 +2,10 @@ import { Link } from "react-router-dom"
 import { CartModal } from "../CartModal/CartModal"
 import { SearchBar } from "./SearchBar"
 import { useContext } from 'react'
-import { AuthContext } from '../../context/Authcontex'
+import { Authcontext } from '../../context/Authcontext'
 
 export const Navbar = () => {
-    const { user, googlesignOut } = useContext(AuthContext)
+    const { user, googlesignOut } = useContext(Authcontext)
 
     const abbreviatedName = user.name ? user.name.substring(0, 5) : "";
 

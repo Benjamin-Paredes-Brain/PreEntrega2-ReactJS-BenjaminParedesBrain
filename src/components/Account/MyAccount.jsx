@@ -1,9 +1,9 @@
 import { useContext } from 'react'
-import { AuthContext } from '../../context/Authcontex'
+import { Authcontext } from '../../context/Authcontext'
 import { Navigate } from "react-router-dom"
 
 export const MyAccount = () => {
-    const { user } = useContext(AuthContext)
+    const { user } = useContext(Authcontext)
 
     if (!user.logged) {
         return <Navigate to="/" />

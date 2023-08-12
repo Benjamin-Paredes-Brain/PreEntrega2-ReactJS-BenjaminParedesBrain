@@ -13,13 +13,13 @@ import { Checkout } from "./components/Checkout/Checkout"
 import { AllResults } from "./components/Header/AllResults"
 import { CreateAccount } from "./components/Account/CreateAccount"
 import { LoginAccount } from "./components/Account/LoginAccount"
-import { AuthContextProvider } from "./context/AuthContext"
+import { AuthcontextProvider } from "./context/Authcontext"
 import { MyAccount } from "./components/Account/MyAccount"
 
 function App() {
 
   return (
-    <AuthContextProvider>
+    <AuthcontextProvider>
       <CartContextProvider>
 
         <BrowserRouter>
@@ -44,7 +44,7 @@ function App() {
         </BrowserRouter>
 
       </CartContextProvider>
-    </AuthContextProvider>
+    </AuthcontextProvider>
   )
 }
 

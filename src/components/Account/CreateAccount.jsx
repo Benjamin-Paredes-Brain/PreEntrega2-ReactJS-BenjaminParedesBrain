@@ -1,11 +1,11 @@
 import { useContext, useState } from 'react'
-import { AuthContext } from '../../context/Authcontex'
+import { Authcontext } from '../../context/Authcontext'
 import { Navigate } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons"
 
 export const CreateAccount = () => {
-    const { googleLogin, user } = useContext(AuthContext)
+    const { googleLogin, user } = useContext(Authcontext)
 
     if (user.logged) {
         return <Navigate to="/" />

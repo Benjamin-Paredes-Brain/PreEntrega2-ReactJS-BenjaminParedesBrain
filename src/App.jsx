@@ -13,7 +13,7 @@ import { Checkout } from "./components/Checkout/Checkout"
 import { AllResults } from "./components/Header/AllResults"
 import { CreateAccount } from "./components/Account/CreateAccount"
 import { LoginAccount } from "./components/Account/LoginAccount"
-import { AuthContextProvider } from "./context/Authcontex"
+import { AuthContextProvider } from "./context/AuthContext"
 import { MyAccount } from "./components/Account/MyAccount"
 
 function App() {

@@ -1,0 +1,22 @@
+.googleButton {
+    border: 1px solid $primary-color;
+    margin: 2rem 0;
+}
+
+.googleButton_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $secondary-color;
+    color: $text-color;
+    cursor: pointer;
+    border: none;
+    padding: 1rem 3rem;
+
+    .googleButton_txt {
+        margin: 0 1rem;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+}

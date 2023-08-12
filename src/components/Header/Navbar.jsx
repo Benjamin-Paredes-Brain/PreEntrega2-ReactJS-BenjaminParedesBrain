@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom"
 import { CartModal } from "../CartModal/CartModal"
 import { SearchBar } from "./SearchBar"
+import { useContext } from 'react'
+import { AuthContext } from '../../context/Authcontex'
 
 export const Navbar = () => {
+    const { user, googlesignOut } = useContext(AuthContext)
+
+    const abbreviatedName = user.name ? user.name.substring(0, 5) : "";
+
 
     return (
         <header className="header">
@@ -15,9 +21,21 @@ export const Navbar = () => {
 
                 <div className="right_header_container">
                     <div className="account_container">
-                        <a href="#" className="account_link">Create account</a>
-                        <span className="account_link">|</span>
-                        <a href="#" className="account_link">login</a>
+
+                        {user.logged ? (
+                            <div>
+                                <Link to={"/"} onClick={googlesignOut} className="account_link account_loged">Logout</Link>
+                                <span className="account_link account_loged">|</span>
+                                <Link to={"/login"} className="account_link account_loged">¡HELLO, {abbreviatedName}!</Link>
+                            </div>
+                        ) : (
+                            <div>
+                                <Link to={"/register"} className="account_link">CREATE ACCOUNT</Link>
+                                <span className="account_link">|</span>
+                                <Link to={"/login"} className="account_link">LOGIN</Link>
+                            </div>
+                        )}
+
                     </div>
 
                     <CartModal />
@@ -34,7 +52,7 @@ export const Navbar = () => {
             </nav>
 
 
-        </header>
+        </header >
     )
 
 }

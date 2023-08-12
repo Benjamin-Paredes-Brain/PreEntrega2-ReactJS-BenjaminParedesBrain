@@ -15,7 +15,7 @@ export const ItemFilters = withItemData(({ loading, itemData }) => {
   }
 
   return (
-    <div>
+    <div style={{ minHeight: "100vh" }}>
       <h3 className="categories_title">CATEGORIES</h3>
 
       <div className="main_container">

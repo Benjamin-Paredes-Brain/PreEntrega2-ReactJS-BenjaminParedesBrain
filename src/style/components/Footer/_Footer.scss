@@ -2,12 +2,46 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 0.2rem;
+    flex-direction: column;
     bottom: 0;
+
+    .footer_info_container {
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+
+        .footer_info{
+            display: flex;
+            align-items: center;
+            margin: 1rem;
+            padding: 0 1rem;
+
+            .footerInfo_icon {
+                font-size: 2rem;
+                color: $primary-color;
+
+            }
+            .footerInfo_txt {
+                font-weight: bold;
+                color: $text-color;
+                margin: 1rem;
+
+            }
+
+        }
+
+    }
+
+    .border_right {
+        border-right: 2px solid $primary-color;
+    }
 
     .copyright {
         font-weight: bold;
         color: $primary-color;
+        margin-top: 1rem;
+        padding: 1rem;
+        text-align: center;
     }
 
     .networks_container {

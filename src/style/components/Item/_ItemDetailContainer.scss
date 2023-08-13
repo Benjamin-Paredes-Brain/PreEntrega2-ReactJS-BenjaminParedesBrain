@@ -55,10 +55,18 @@
             font-size: 1rem;
         }
 
+        .detail_description {
+            color: $text-color;
+            text-align: center;
+            margin: 10px;
+            text-transform: uppercase;
+            font-size: 1rem;
+            text-align: left;
+        }
+
         .selected_size{
             color: $primary-color;
         }
     }
-
 
 }

@@ -13,7 +13,7 @@ export const LoginAccount = () => {
     }
 
     return (
-        <div>
+        <div style={{ minHeight: "100vh" }}>
             <h2 className="page_title">LOGIN</h2>
 
             <button className='googleButton' onClick={googleLogin}>

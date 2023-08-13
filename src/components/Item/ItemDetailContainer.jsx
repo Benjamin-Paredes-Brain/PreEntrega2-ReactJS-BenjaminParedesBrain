@@ -18,7 +18,7 @@ export const ItemDetailContainer = withItemData(({ loading, itemData }) => {
 
     const handleAddCart = () => {
         if (!selectedSize) {
-            alert("Por favor, selecciona un talle antes de agregar el ítem al carrito.");
+            alert("Please select a size before adding the item to the cart.");
             return;
         }
         const newItem = {
@@ -48,6 +48,7 @@ export const ItemDetailContainer = withItemData(({ loading, itemData }) => {
                 <div className="detail_info_container">
                     <p className="detail_title">{item.title}</p>
                     <p className="detail_price">${item.price}</p>
+                    <p className="detail_description">{item.description}</p>
                     <hr />
                     <ItemSize selectedSize={selectedSize} setSelectedSize={setSelectedSize} />
                     <ItemCount stock={availableStock} add={handleAddCart} quantity={quantity} setQuantity={setQuantity} />

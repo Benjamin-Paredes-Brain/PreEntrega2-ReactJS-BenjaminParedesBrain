@@ -14,7 +14,6 @@ const schemaValidation = Yup.object().shape({
         .required("This field is required")
         .email("The email is invalid"),
     message: Yup.string()
-        .min(10, "The message is too short")
         .max(100, "Maximum 100 characters")
         .required("This field is required"),
 

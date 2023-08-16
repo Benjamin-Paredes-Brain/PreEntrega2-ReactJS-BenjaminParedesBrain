@@ -10,7 +10,7 @@ export const ItemCount = ({ stock, add, quantity, setQuantity }) => {
     }
 
     return (
-        <>
+        <div className="itemCount_Container">
             {stock > 0 ?
 
                 <div className="quantity_selector">
@@ -32,6 +32,6 @@ export const ItemCount = ({ stock, add, quantity, setQuantity }) => {
 
 
 
-        </>
+        </div>
     )
 }

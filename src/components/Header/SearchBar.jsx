@@ -20,11 +20,11 @@ export const SearchBar = withItemData(({ itemData }) => {
             )
         );
     };
-
+    
     const handleRedirect = (e) => {
-        searchText.length === 0 
-        ? e.preventDefault() 
-        : navigate(`/all-results/${searchText}`);
+        searchText.length === 0
+            ? e.preventDefault()
+            : navigate(`/all-results/${searchText}`);
         handleOptionClick();
 
     };
@@ -49,6 +49,7 @@ export const SearchBar = withItemData(({ itemData }) => {
 
     return (
         <div className="searchBar_container" ref={searchBarRef}>
+
             <form className="searchBar_form">
                 <input
                     className="searchBar_input"

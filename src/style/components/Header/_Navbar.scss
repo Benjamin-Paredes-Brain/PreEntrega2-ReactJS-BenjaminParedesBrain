@@ -63,3 +63,27 @@
     }
 
 }
+
+@media screen and (max-width: 768px) {
+    .header {
+
+        .header_container {
+            padding: 10px;
+
+
+            .header_logo_container {
+                .header_logo {
+                    max-width: 60%;
+                }
+            }
+
+            .account_link {
+                display: none;
+            }
+        }
+
+        .navbar {
+            display: none;
+        }
+    }
+}

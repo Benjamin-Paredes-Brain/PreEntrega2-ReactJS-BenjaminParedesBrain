@@ -13,7 +13,7 @@ export const ItemSize = withItemData(({ itemData, selectedSize, setSelectedSize 
   return (
     <div>
       {item && (
-        <div>
+        <div className="size_container">
           {item.stock > 0 && (
             <p className="detail_title_size">SIZES:</p>
           )}

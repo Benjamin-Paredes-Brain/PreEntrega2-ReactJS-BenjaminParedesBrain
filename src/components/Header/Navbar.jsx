@@ -3,6 +3,7 @@ import { CartModal } from "../CartModal/CartModal"
 import { SearchBar } from "./SearchBar"
 import { useContext } from 'react'
 import { Authcontext } from '../../context/Authcontext'
+import { NavbarMobile } from "./NavbarMobile";
 
 export const Navbar = () => {
     const { user, googlesignOut } = useContext(Authcontext)
@@ -39,6 +40,7 @@ export const Navbar = () => {
                     </div>
 
                     <CartModal />
+                    <NavbarMobile />
 
                 </div>
 

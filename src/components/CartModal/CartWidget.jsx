@@ -4,8 +4,8 @@ import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 
 export const CartWidget = ({ openCart }) => {
-    const {totalQuantity, handleMenuCartOpen} = useContext(CartContext)
-    
+    const { totalQuantity } = useContext(CartContext)
+
     return (
         <div className="cart_modal_container">
             <div className="cart_icon_container">

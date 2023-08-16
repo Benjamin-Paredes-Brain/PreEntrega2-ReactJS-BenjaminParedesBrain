@@ -5,7 +5,7 @@ import withItemData from "./withItemData";
 
 export const ItemListContainer = withItemData(({ loading, itemData }) => {
     return (
-        <div>
+        <div style={{ minHeight: "100vh" }}>
             <h2 className="page_title">PRODUCTS</h2>
 
             <div className="main_itemlist_container">

@@ -1,0 +1,121 @@
+.mobileNav_container {
+    display: none;
+}
+
+.mobile_burgerIcon {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+    .mobile_burgerIcon {
+        display: block;
+        color: $text-color;
+        font-size: 20px;
+    }
+
+    .modal_containerNav {
+        position: fixed;
+        background-color: $secondary-color;
+        top: 0;
+        left: 0;
+        width: calc(100% / 1.5);
+        min-height: 100vh;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 2;
+
+        .mobileNav_container {
+            display: block;
+
+            .navbarMobile {
+                display: flex;
+                flex-direction: column;
+
+                .navbar_linkMobile {
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    color: $text-color;
+                    padding: 1rem;
+                    border-top: 1px solid $bg-color;
+                }
+
+                .categories_active {
+                    background-color: $primary-color;
+                }
+
+                .categories_drop {
+                    background-color: $bg-color;
+                    max-height: 0;
+                    overflow: hidden;
+                    opacity: 0;
+                    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+                    &.open {
+                        max-height: 500px;
+                        opacity: 1;
+                    }
+
+                    .drop_container {
+                        padding: 1rem;
+                        border-top: 1px solid $secondary-color;
+
+                        .categories_link {
+                            text-decoration: none;
+                            color: $text-color;
+                        }
+
+                        .allProducts {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+
+        .accountMobile_container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $secondary-color;
+            border-top: 1px solid $bg-color;
+            width: 100%;
+
+            .account_linkMobile {
+                color: $text-color;
+                text-decoration: none;
+                padding: 0.5rem;
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                font-weight: 500;
+            }
+
+            .account_loged {
+                color: $primary-color;
+            }
+
+        }
+    }
+
+    .modal_activeNav {
+        transform: translateX(0%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .backdrop_activeNav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+        transition: opacity 0.3s ease-in-out;
+        overflow: hidden;
+    }
+
+
+}

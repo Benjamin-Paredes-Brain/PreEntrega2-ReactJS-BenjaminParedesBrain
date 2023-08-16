@@ -49,7 +49,7 @@ export const ItemDetailContainer = withItemData(({ loading, itemData }) => {
                     <p className="detail_title">{item.title}</p>
                     <p className="detail_price">${item.price}</p>
                     <p className="detail_description">{item.description}</p>
-                    <hr />
+                    <hr className="hr_detail" />
                     <ItemSize selectedSize={selectedSize} setSelectedSize={setSelectedSize} />
                     <ItemCount stock={availableStock} add={handleAddCart} quantity={quantity} setQuantity={setQuantity} />
                 </div>

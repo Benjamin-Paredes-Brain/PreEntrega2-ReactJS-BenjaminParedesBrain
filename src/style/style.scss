@@ -23,12 +23,19 @@
 @import "./components/Checkout/Checkout";
 @import "./components/Account/LoginAccount";
 @import "./components/Account/MyAccount";
+@import "./components/Header/NavbarMobile";
 
 html {
     background-color: $bg-color;
     margin-left: 20%;
     margin-right: 20%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media screen and (max-width: 768px) { 
+    html {
+        margin: 0;
+    }
 }
 
 .page_title {

@@ -9,7 +9,6 @@ const [showCart, setShowCart] = useState(false);
 
 const handleMenuCartOpen = () => {
     setShowCart(true);
-    document.body.style.overflow = "hidden";
 }
 
 const handleMenuCartClose = () => {
